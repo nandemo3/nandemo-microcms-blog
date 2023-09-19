@@ -4,6 +4,7 @@ import type {
   MicroCMSImage,
   MicroCMSDate,
   MicroCMSContentId,
+  MicroCMSListResponse,
 } from 'microcms-js-sdk';
 import { notFound } from 'next/navigation';
 
@@ -94,4 +95,14 @@ export const getTag = async (contentId: string, queries?: MicroCMSQueries) => {
     .catch(notFound);
 
   return detailData;
+};
+// ライターを取得
+export const getWriters = async () => {
+  const writerData = await client
+    .get<Writer[]>({
+      endpoint: 'writers',
+    })
+    .catch(notFound);
+
+  return writerData;
 };

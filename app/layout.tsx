@@ -1,10 +1,11 @@
+import CssBaseline from '@mui/material/CssBaseline';
+import Container from '@mui/material/Container';
+
 import { getTagList } from '@/libs/microcms';
 import { LIMIT } from '@/constants';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import Nav from '@/components/Nav';
 import './globals.css';
-import styles from './layout.module.css';
 
 export const metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
@@ -24,6 +25,7 @@ type Props = {
   children: React.ReactNode;
 };
 
+
 export default async function RootLayout({ children }: Props) {
   const tags = await getTagList({
     limit: LIMIT,
@@ -31,10 +33,14 @@ export default async function RootLayout({ children }: Props) {
   return (
     <html lang="ja">
       <body>
-        <Header />
-        <Nav tags={tags.contents} />
-        <main className={styles.main}>{children}</main>
-        <Footer />
+          <CssBaseline />
+          <Container maxWidth="lg">
+            <Header tags={tags.contents} title="nandemo's blog"/>
+            <main>{children}</main>
+          </Container>
+          <Footer 
+            description="頑張ろう！"
+          />
       </body>
     </html>
   );
