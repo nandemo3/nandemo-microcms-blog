@@ -9,12 +9,12 @@ import './globals.css';
 
 export const metadata = {
   metadataBase: new URL(process.env.BASE_URL || 'http://localhost:3000'),
-  title: "nandemo's blog",
-  description: 'this is blog by nandemo',
+  title: 'Simple Blog',
+  description: 'A simple blog presented by microCMS',
   openGraph: {
-    title: "nandemo's blog",
-    description: 'this is blog by nandemo',
-    images: '/neko.jpg',
+    title: 'Simple Blog',
+    description: 'A simple blog presented by microCMS',
+    images: '/ogp.png',
   },
   alternates: {
     canonical: '/',
