@@ -38,7 +38,7 @@ export default function Sidebar(props: SidebarProps) {
           sx={{ mb: 0.5 }}
         >
           <Stack direction="row" spacing={1} alignItems="center">
-            {/* <network.icon /> */}
+            <network.icon />
             <span>{network.name}</span>
           </Stack>
         </Link>
